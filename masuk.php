@@ -14,7 +14,7 @@ require 'cek.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stock Barang - Toko Adew</title>
+    <title>Barang Masuk - Toko Adew</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@ require 'cek.php';
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Stock Barang -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Stock Barang</span></a>
@@ -57,7 +57,7 @@ require 'cek.php';
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Barang Masuk -->
-            <li class="nav-item">
+            <li class="nav-item active">
             <a class="nav-link" href="masuk.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Barang Masuk</span>
@@ -145,7 +145,7 @@ require 'cek.php';
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Stock Barang</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Barang Masuk</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -155,12 +155,12 @@ require 'cek.php';
                 <div class="container-fluid">
 
 <!-- Page Heading -->
-<p class="mb-4">Jumlah Stock Barang yang tersedia saat ini.</p>
+<p class="mb-4">Jumlah Barang yang masuk.</p>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Stock Barang</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Barang Masuk</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
