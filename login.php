@@ -1,3 +1,29 @@
+<?php
+require 'function.php';
+
+// cek login terdaftar atau tidak
+if (isset($_POST['login'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //cocokin dengan database ada atau tidak datanya
+    $cekdatabase = mysqli_query($conn, "SELECT * FROM login WHERE email='$email' and password='$password'");
+    //hitung jumlah data
+    $hitung = mysqli_num_rows($cekdatabase);
+    if ($hitung>0){
+        $_SESSION['log'] = 'true';
+        header('location:index.php');
+    } else {
+        header('location:login.php');
+    };
+};
+
+if (!isset($_SESSION['log'])){
+}  else {
+    header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +35,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Db Toko - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,16 +65,16 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Login!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">
@@ -58,9 +84,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button name="login" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
