@@ -5,6 +5,7 @@ require 'function.php';
 if (isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $_SESSION['email'] = $email;
 
     //cocokin dengan database ada atau tidak datanya
     $cekdatabase = mysqli_query($conn, "SELECT * FROM login WHERE email='$email' and password='$password'");
