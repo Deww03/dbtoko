@@ -165,26 +165,50 @@ require 'cek.php';
 
 <!-- Button to Open the Modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-Tambah Barang
+Tambah Stock Barang
 </button>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>ID Barang</th>
+                        <th>No</th>
                         <th>Nama Barang</th>
                         <th>Deskripsi</th>
                         <th>Stock</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                    <?php
+                    $ambilsemuadatastock = mysqli_query($conn, "SELECT * FROM stock");
+                    $i = 1;
+                    while ($data = mysqli_fetch_array($ambilsemuadatastock)) {
+                        $namabarang = $data['namabarang'];
+                        $deskripsi = $data['deskripsi'];
+                        $stock = $data['stock'];
+                    ?>
+
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
+                        <td><?=$i++;?></td>
+                        <td><?=$namabarang;?></td>
+                        <td><?=$deskripsi;?></td>
+                        <td><?=$stock;?></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#edit">
+                            Edit
+                            </button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+                            Delete
+                            </button>
+                        </td>
                     </tr>
+                    
+                    <?php
+                    };
+                    ?>
+                    
                 </tbody>
             </table>
         </div>

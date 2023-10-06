@@ -33,7 +33,7 @@ require 'cek.php';
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Toko Adew -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -107,7 +107,7 @@ require 'cek.php';
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-warning" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -160,30 +160,52 @@ require 'cek.php';
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Tabel Data Barang Keluar</h6>
+        <h6 class="m-0 font-weight-bold text-warning">Tabel Data Barang Keluar</h6>
     </div>
 <!-- Button to Open the Modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-Tambah Barang
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+Tambah Barang Keluar
 </button>
 <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+            <thead>
                     <tr>
-                        <th>ID Barang</th>
+                        <th>Tanggal</th>
                         <th>Nama Barang</th>
-                        <th>Deskripsi</th>
-                        <th>Stock</th>
+                        <th>Qty</th>
+                        <th>keterangan</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php
+                    $ambilsemuadatastock = mysqli_query($conn, "SELECT * FROM keluar k, stock s WHERE s.idbarang = k.idbarang");
+                    while ($data = mysqli_fetch_array($ambilsemuadatastock)) {
+                        $tanggal = $data['tanggal'];
+                        $namabarang = $data['namabarang'];
+                        $qty = $data['qty'];
+                        $keterangan = $data['keterangan'];
+                    ?>
+
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
+                        <td><?=$tanggal;?></td>
+                        <td><?=$namabarang;?></td>
+                        <td><?=$qty;?></td>
+                        <td><?=$keterangan;?></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#edit">
+                            Edit
+                            </button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+                            Delete
+                            </button>
+                        </td>
                     </tr>
+                    
+                    <?php
+                    };
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -225,7 +247,7 @@ Tambah Barang
 
         <!-- Modal footer -->
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" name="barangkeluar">Submit</button>
+            <button type="submit" class="btn btn-warning" name="barangkeluar">Submit</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
         </form>
@@ -275,7 +297,7 @@ Tambah Barang
                 <div class="modal-body">Tekan "Logout" dibawah jika kamu ingin keluar sesi.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-warning" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
