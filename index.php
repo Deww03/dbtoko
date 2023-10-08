@@ -36,7 +36,7 @@ require 'cek.php';
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Toko Adew -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -188,6 +188,7 @@ Tambah Stock Barang
                         $namabarang = $data['namabarang'];
                         $deskripsi = $data['deskripsi'];
                         $stock = $data['stock'];
+                        $idb = $data['idbarang'];
                     ?>
 
                     <tr>
@@ -196,14 +197,75 @@ Tambah Stock Barang
                         <td><?=$deskripsi;?></td>
                         <td><?=$stock;?></td>
                         <td>
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#edit">
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#edit<?=$idb;?>">
                             Edit
                             </button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+                            <input type="hidden" name="idbarangygmaudihapus" value="<?=$idb;?>">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idb;?>">
                             Delete
                             </button>
                         </td>
                     </tr>
+
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="edit<?=$idb;?>">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                            <h4 class="modal-title">Edit Barang</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <form method="post">
+                            <div class="modal-body">
+                                <input type="text" name="namabarang" value="<?=$namabarang;?>" class="form-control" required>
+                                <br>
+                                <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
+                                <br>
+                                <input type="hidden" name="idb" value="<?=$idb;?>">
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-secondary" name="updatebarang">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="delete<?=$idb;?>">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                            <h4 class="modal-title">Hapus Barang?</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <form method="post">
+                            <div class="modal-body">
+                                Apakah Anda Yakin Ingin Mengahpus <?=$namabarang;?>
+                                <br>
+                                <br>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
                     
                     <?php
                     };
