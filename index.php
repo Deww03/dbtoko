@@ -252,7 +252,8 @@ Tambah Stock Barang
                             <!-- Modal body -->
                             <form method="post">
                             <div class="modal-body">
-                                Apakah Anda Yakin Ingin Mengahpus <?=$namabarang;?>
+                                Apakah Anda Yakin Ingin Mengahpus <?=$namabarang;?>?
+                                <input type="hidden" name="idb" value="<?=$idb;?>">
                                 <br>
                                 <br>
                             </div>
