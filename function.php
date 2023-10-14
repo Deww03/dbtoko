@@ -13,10 +13,10 @@
 
         $addtotable = mysqli_query($conn, "INSERT INTO stock (namabarang, deskripsi, stock) VALUES ('$namabarang','$deskripsi','$stock')");
         if($addtotable){
-            header("location:index.php");
+            header("location:stock.php");
         } else {
             echo 'Gagal';
-            header('location:index.php');
+            header('location:stock.php');
         }
     };
 
@@ -65,7 +65,7 @@
         }
     }
 
-    // update info barang
+    // update Barang
     if(isset($_POST['updatebarang'])){
         $idb = $_POST['idb'];
         $namabarang = $_POST['namabarang'];
@@ -73,10 +73,10 @@
 
         $update = mysqli_query($conn, "UPDATE stock SET namabarang='$namabarang', deskripsi='$deskripsi' WHERE idbarang = '$idb'");
         if($update){
-            header('location:index.php');
+            header('location:stock.php');
         } else {
             echo 'Gagal';
-            header('location:index.php');
+            header('location:stock.php');
         }
     }
 
@@ -86,10 +86,10 @@
 
         $hapus = mysqli_query($conn, "DELETE FROM stock WHERE idbarang = '$idb'");
         if($hapus){
-            header("location:index.php");
+            header("location:stock.php");
         } else {
             echo "Gagal";
-            header("location:index.php");
+            header("location:stock.php");
         }
         
     };

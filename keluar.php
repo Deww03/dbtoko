@@ -31,10 +31,10 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Toko Adew -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -42,38 +42,40 @@
                 </a>
 
                 <!-- Divider -->
-                <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider my-0">
 
-                <!-- Nav Item - Stock Barang -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Stock Barang</span>
-                    </a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider my-0">
-
-                <!-- Nav Item - Barang Masuk -->
-                <li class="nav-item">
-                    <a class="nav-link" href="masuk.php">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Barang Masuk</span>
-                    </a>
-                </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
                 <!-- Divider -->
-                <hr class="sidebar-divider my-0">
+                <hr class="sidebar-divider">
 
-                <!-- Nav Item - Barang Keluar -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="keluar.php">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Barang Keluar</span>
-                    </a>
-                </li>
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Interface
+                </div>
 
+                <!-- Nav Item - Barang Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Barang</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Data Barang :</h6>
+                        <a class="collapse-item" href="stock.php">Stock Barang</a>
+                        <a class="collapse-item" href="masuk.php">Barang Masuk</a>
+                        <a class="collapse-item" href="keluar.php">Barang Keluar</a>
+                    </div>
+                </div>
+            </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
 
@@ -115,7 +117,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-warning" type="button">
+                                    <button class="btn btn-info" type="button">
                                         <i class="fas fa-search fa-sm"></i>
                                     </button>
                                 </div>
@@ -165,10 +167,10 @@
                                 <!-- DataTales Example -->
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-warning">Tabel Data Barang Keluar</h6>
+                                        <h6 class="m-0 font-weight-bold text-info">Tabel Data Barang Keluar</h6>
                                     </div>
                                 <!-- Button to Open the Modal -->
-                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
                                 Tambah Barang Keluar
                                 </button>
                                 <div class="card-body">
@@ -309,7 +311,7 @@
 
                                             <!-- Modal footer -->
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-warning" name="barangkeluar">Submit</button>
+                                                <button type="submit" class="btn btn-info" name="barangkeluar">Submit</button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                             </div>
                                         </form>
@@ -359,7 +361,7 @@
                     <div class="modal-body">Tekan "Logout" dibawah jika kamu ingin keluar sesi.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-warning" href="logout.php">Logout</a>
+                        <a class="btn btn-info" href="logout.php">Logout</a>
                     </div>
                 </div>
             </div>

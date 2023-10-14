@@ -10860,6 +10860,11 @@ a:focus {
   }
 }
 
+.bg-menuutama-image {
+  background: url("https://pin.it/6crUZV2");
+  background-size: 100%;
+}
+
 .bg-login-image {
   background: url("https://i.pinimg.com/originals/6f/5d/77/6f5d77be44297464f468256fc8d45a17.jpg");
   background-position: center;
