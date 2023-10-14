@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Stock Barang - Toko Adew</title>
+        <title>Kelola Admin - Toko Adew</title>
 
         <!-- Custom fonts for this template-->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
             <!-- Sidebar -->
-            <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
                 <!-- Sidebar - Toko Adew -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="stock.php">
                     <div class="sidebar-brand-icon rotate-n-15">
@@ -89,7 +89,7 @@
                 <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Info User :</h6>
+                        <h6 class="collapse-header">dark User :</h6>
                         <a class="collapse-item" href="admin.php">Kelola Admin</a>
                         <a class="collapse-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                     </div>
@@ -114,7 +114,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-dark bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -128,7 +128,7 @@
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-info" type="button">
+                                <button class="btn btn-dark" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -137,7 +137,7 @@
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
+                        <!-- Nav Item - User darkrmation -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -145,7 +145,7 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
+                            <!-- Dropdown - User darkrmation -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
@@ -166,7 +166,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Stock Barang</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Kelola Admin</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -176,73 +176,52 @@
                 <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <p class="mb-4">Jumlah Stock Barang yang tersedia saat ini.</p>
+                <p class="mb-4">Mengelola Admin.</p>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-info">Tabel Data Stock Barang</h6>
+                        <h6 class="m-0 font-weight-bold text-dark">Tabel Admin</h6>
                     </div>
 
-                <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                Tambah Stock Barang
+                    <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+                    Tambah Admin
                 </button>
                 <br>
-                <a href="export.php" class="btn btn-secondary">Export Data</a>
+
                     <div class="card-body">
-
-                    <?php  
-                        $ambildatastock = mysqli_query($conn,"SELECT * FROM stock WHERE stock < 1");
-
-                        while($fetch=mysqli_fetch_array($ambildatastock)){
-                            $barang = $fetch['namabarang'];
-                            ?>
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Perhatian!</strong> Stock <?=$barang;?> Telah Habis.
-                        </div>
-                    <?php
-                        };
-                    ?>
-
 
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Barang</th>
-                                <th>Deskripsi</th>
-                                <th>Stock</th>
+                                <th>Email Admin</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <?php
-                            $ambilsemuadatastock = mysqli_query($conn, "SELECT * FROM stock");
+                            $ambilsemuadataadmin = mysqli_query($conn, "SELECT * FROM login");
                             $i = 1;
-                            while ($data = mysqli_fetch_array($ambilsemuadatastock)) {
-                                $namabarang = $data['namabarang'];
-                                $deskripsi = $data['deskripsi'];
-                                $stock = $data['stock'];
-                                $idb = $data['idbarang'];
+                            while ($data = mysqli_fetch_array($ambilsemuadataadmin)) {
+                                $em = $data['email'];
+                                $iduser = $data['iduser'];
                             ?>
 
                             <tr>
                                 <td><?=$i++;?></td>
-                                <td><?=$namabarang;?></td>
-                                <td><?=$deskripsi;?></td>
-                                <td><?=$stock;?></td>
+                                <td><?=$em;?></td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idb;?>">Edit</button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idb;?>">Delete</button>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$iduser;?>">Edit</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$iduser;?>">Delete</button>
                                 </td>
                             </tr>
 
                             <!-- Edit Modal -->
-                            <div class="modal fade" id="edit<?=$idb;?>">
+                            <div class="modal fade" id="edit<?=$iduser;?>">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     
@@ -255,12 +234,12 @@
                                         <!-- Modal body -->
                                         <form method="post">
                                             <div class="modal-body">
-                                                <input type="text" name="namabarang" value="<?=$namabarang; ?>" class="form-control" required>
+                                                <input type="email" name="emailadmin" value="<?=$em; ?>" class="form-control" placeholder="Email" required>
                                                 <br>
-                                                <input type="text" name="deskripsi" value="<?=$deskripsi; ?>" class="form-control" required>
+                                                <input type="password" name="passwordbaru" class="form-control" placeholder="Password">
                                                 <br>
-                                                <input type="hidden" name="idb" value="<?=$idb;?>">
-                                                <button type="submit" class="btn btn-info" name="updatebarang">Submit</button>
+                                                <input type="hidden" name="id" value="<?=$iduser;?>">
+                                                <button type="submit" class="btn btn-dark" name="updateadmin">Submit</button>
                                             </div>
                                         </form>
                                     </div>
@@ -268,7 +247,7 @@
                             </div>
 
                             <!-- Delete Modal -->
-                            <div class="modal fade" id="delete<?=$idb;?>">
+                            <div class="modal fade" id="delete<?=$iduser;?>">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     
@@ -281,10 +260,10 @@
                                         <!-- Modal body -->
                                         <form method="post">
                                             <div class="modal-body">
-                                                Apakah Anda yakin ingin menghapus <?=$namabarang;?>?
-                                                <input type="hidden" name="idb" value="<?=$idb;?>">
+                                                Apakah Anda yakin ingin menghapus <?=$em;?>?
+                                                <input type="hidden" name="id" value="<?=$iduser;?>">
                                                 <br><br>
-                                                <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                                <button type="submit" class="btn btn-danger" name="hapusadmin">Hapus</button>
                                             </div>
                                         </form>
                                     </div>
@@ -308,23 +287,22 @@
         
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Barang</h4>
+                    <h4 class="modal-title">Tambah Admin</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 
                 <!-- Modal body -->
                 <form method="post">
                     <div class="modal-body">
-                        <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+                        <input type="email" name="email" placeholder="Email" class="form-control" required>
                         <br>
-                        <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+                        <input type="password" name="password" placeholder="Password" class="form-control" required>
                         <br>
-                        <input type="number" name="stock" placeholder="stock" class="form-control" required> 
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info" name="addnewbarang">Submit</button>
+                        <button type="submit" class="btn btn-dark" name="addadmin">Submit</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -372,7 +350,7 @@
                     <div class="modal-body">Tekan "Logout" dibawah jika kamu ingin keluar sesi.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-info" href="logout.php">Logout</a>
+                        <a class="btn btn-dark" href="logout.php">Logout</a>
                     </div>
                 </div>
             </div>
