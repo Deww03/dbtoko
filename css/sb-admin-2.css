@@ -10861,8 +10861,9 @@ a:focus {
 }
 
 .bg-menuutama-image {
-  background: url("https://pin.it/6crUZV2");
-  background-size: 100%;
+  background: url("https://i.pinimg.com/originals/88/2d/42/882d42713fefb91a41f71412bf938bb1.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .bg-login-image {
@@ -10872,7 +10873,7 @@ a:focus {
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url("https://i.pinimg.com/originals/88/2d/42/882d42713fefb91a41f71412bf938bb1.jpg");
   background-position: center;
   background-size: cover;
 }

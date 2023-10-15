@@ -36,7 +36,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Login - Toko Adew</title>
+        <title>Login -  DamTech</title>
 
         <!-- Custom fonts -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

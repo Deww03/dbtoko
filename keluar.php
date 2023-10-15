@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Barang Keluar - Toko Adew</title>
+        <title>Barang Keluar -  DamTech</title>
 
         <!-- Custom fonts -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,12 +33,12 @@
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                <!-- Sidebar - Toko Adew -->
+                <!-- Sidebar -  DamTech -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
-                    <div class="sidebar-brand-text mx-3">Toko Adew</div>
+                    <div class="sidebar-brand-text mx-3"> DamTech</div>
                 </a>
 
                 <!-- Divider -->
