@@ -221,6 +221,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
+                                <th>Merk</th>
                                 <th>Deskripsi</th>
                                 <th>Stock</th>
                                 <th>Aksi</th>
@@ -233,6 +234,7 @@
                             $i = 1;
                             while ($data = mysqli_fetch_array($ambilsemuadatastock)) {
                                 $namabarang = $data['namabarang'];
+                                $merk = $data['merk'];
                                 $deskripsi = $data['deskripsi'];
                                 $stock = $data['stock'];
                                 $idb = $data['idbarang'];
@@ -241,6 +243,7 @@
                             <tr>
                                 <td><?=$i++;?></td>
                                 <td><?=$namabarang;?></td>
+                                <td><?=$merk;?></td>
                                 <td><?=$deskripsi;?></td>
                                 <td><?=$stock;?></td>
                                 <td>
@@ -264,6 +267,8 @@
                                         <form method="post">
                                             <div class="modal-body">
                                                 <input type="text" name="namabarang" value="<?=$namabarang; ?>" class="form-control" required>
+                                                <br>
+                                                <input type="text" name="merk" value="<?=$merk; ?>" class="form-control" required>
                                                 <br>
                                                 <input type="text" name="deskripsi" value="<?=$deskripsi; ?>" class="form-control" required>
                                                 <br>
@@ -326,9 +331,11 @@
                     <div class="modal-body">
                         <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
                         <br>
+                        <input type="text" name="merk" placeholder="Merk" class="form-control" required>
+                        <br>
                         <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
                         <br>
-                        <input type="number" name="stock" placeholder="stock" class="form-control" required> 
+                        <input type="number" name="stock" placeholder="Stock" class="form-control" required> 
                     </div>
 
                     <!-- Modal footer -->

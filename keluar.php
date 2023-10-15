@@ -202,7 +202,7 @@
                                                         <th>Tanggal</th>
                                                         <th>Nama Barang</th>
                                                         <th>Jumlah</th>
-                                                        <th>keterangan</th>
+                                                        <th>Keterangan</th>
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>

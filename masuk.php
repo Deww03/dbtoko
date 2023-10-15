@@ -204,7 +204,7 @@
                                         <th>Tanggal</th>
                                         <th>Nama Barang</th>
                                         <th>Jumlah</th>
-                                        <th>penerima</th>
+                                        <th>Penerima</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
