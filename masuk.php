@@ -16,13 +16,13 @@
 
         <title>Barang Masuk - Toko Adew</title>
 
-        <!-- Custom fonts for this template-->
+        <!-- Custom fonts -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
 
-        <!-- Custom styles for this template-->
+        <!-- Custom styles -->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     </head>
@@ -62,47 +62,47 @@
             </div>
 
                 <!-- Nav Item - Barang Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Barang</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Barang :</h6>
-                        <a class="collapse-item" href="stock.php">Stock Barang</a>
-                        <a class="collapse-item" href="masuk.php">Barang Masuk</a>
-                        <a class="collapse-item" href="keluar.php">Barang Keluar</a>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Barang</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Data Barang :</h6>
+                            <a class="collapse-item" href="stock.php">Stock Barang</a>
+                            <a class="collapse-item" href="masuk.php">Barang Masuk</a>
+                            <a class="collapse-item" href="keluar.php">Barang Keluar</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
             <!-- Divider -->
-                <hr class="sidebar-divider">
+            <hr class="sidebar-divider">
 
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Profile
-                </div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Profile
+            </div>
 
                 <!-- Nav Item - Barang Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
-                    aria-expanded="true" aria-controls="collapseProfile">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>User</span>
-                </a>
-                <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Info User :</h6>
-                        <a class="collapse-item" href="admin.php">Kelola Admin</a>
-                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
+                        aria-expanded="true" aria-controls="collapseProfile">
+                        <i class="fas fa-fw fa-book"></i>
+                        <span>User</span>
+                    </a>
+                    <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Info User :</h6>
+                            <a class="collapse-item" href="admin.php">Kelola Admin</a>
+                            <a class="collapse-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -114,6 +114,8 @@
 
         </ul>
         <!-- End of Sidebar -->
+
+
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -150,6 +152,7 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['email'];?></span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
+
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -165,6 +168,8 @@
 
                 </nav>
                 <!-- End of Topbar -->
+
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -273,7 +278,6 @@
                                                             <br><br>
                                                             <button type="submit" class="btn btn-danger" name="hapusbarangmasuk">Hapus</button>
                                                         </div>
-
                                                     </form>
                                                 </div>
                                             </div>
@@ -288,6 +292,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">
@@ -332,10 +337,13 @@
         </div>
             </div>
         <!-- End of Main Content -->
-                        <!-- /.container-fluid -->
+
+
 
                     </div>
                     <!-- End of Main Content -->
+
+
 
                     <!-- Footer -->
                     <footer class="sticky-footer bg-white">
@@ -347,12 +355,18 @@
                     </footer>
                     <!-- End of Footer -->
 
+
+
                 </div>
                 <!-- End of Content Wrapper -->
+
+
 
             </div>
             <!-- End of Page Wrapper -->
 
+
+            
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>

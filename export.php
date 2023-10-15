@@ -21,7 +21,7 @@
 			<h4>(Inventory)</h4>
 				<div class="data-tables datatable-dark">
 					
-					<!-- Masukkan table nya disini, dimulai dari tag TABLE -->
+					<!-- TABLE -->
                     <table class="table table-bordered" id="mauexport" width="100%" cellspacing="0">
                         <thead>
                             <tr>
