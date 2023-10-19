@@ -282,4 +282,50 @@
         
         }
     }
+
+    //menambah supplier baru
+    if(isset($_POST["addnewsupplier"])){
+        $namasupplier = $_POST['namasupplier'];
+        $alamat = $_POST['alamat'];
+        $notelpon = $_POST['notelpon'];
+       
+        $addtosupplier = mysqli_query($conn, "INSERT INTO supplier (namasupplier, alamat, notelpon) VALUES ('$namasupplier','$alamat','$notelpon')");
+        if($addtotable){
+            header("location:supplier.php");
+        } else {
+            echo 'Gagal';
+            header('location:supplier.php');
+        }
+    }
+
+    // edit data supplier
+    if(isset($_POST['updatesupplier'])){
+        $ids = $_POST['ids'];
+        $namasupplier = $_POST['namasupplier'];
+        $alamat = $_POST['alamat'];
+        $notelpon = $_POST['notelpon'];
+
+        $update = mysqli_query($conn, "UPDATE supplier SET namasupplier='$namasupplier', alamat ='$alamat', notelpon='$notelpon' WHERE idsupplier = '$ids'");
+        if($update){
+            header('location:supplier.php');
+        } else {
+            echo 'Gagal';
+            header('location:supplier.php');
+        }
+    }
+
+    // menghapus supplier
+    if(isset($_POST['hapussupplier'])){
+        $ids = $_POST['ids'];
+
+        $hapus = mysqli_query($conn, "DELETE FROM supplier WHERE idsupplier = '$ids'");
+        if($hapus){
+            header("location:supplier.php");
+        } else {
+            echo "Gagal";
+            header("location:supplier.php");
+        }
+        
+    }
+
 ?>
