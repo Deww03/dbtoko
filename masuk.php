@@ -228,12 +228,20 @@
                                             $penerima = $data['penerima'];
                                         ?>
 
+                                    <?php
+                                        $ambilsemuadatasupplier = mysqli_query($conn, "SELECT * FROM masuk m, supplier s WHERE s.idsupplier = m.idsupplier");
+                                        while ($data = mysqli_fetch_array($ambilsemuadatasupplier)) {
+                                            $ids = $data['idsupplier'];
+                                            $namasupplier = $data['namasupplier'];
+                                        };
+                                        ?>
+
                                         <tr>
                                             <td><?=$tanggal;?></td>
                                             <td><?=$namabarang;?></td>
                                             <td><?=$qty;?></td>
                                             <td><?=$penerima;?></td>
-                                            <td>test</td>
+                                            <td><?=$namasupplier;?></td>
                                             <td>
                                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idm;?>">Edit</button>
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idm;?>">Delete</button>
@@ -255,10 +263,24 @@
                                                         <div class="modal-body">
                                                             <input type="text" name="penerima" value="<?=$penerima; ?>" class="form-control" required>
                                                             <br>
-                                                            <input type="number" name="qty" value="<?=$qty; ?>" class="form-control" required>
+                                                            <input type="number" name="qty" value="<?=$qty;?>" class="form-control" required>
+                                                            <br>
+                                                            <select name="suppliernya" class="form-control">
+                                                            <?php
+                                                                $ambilsemuasupplier = mysqli_query($conn,"SELECT * FROM supplier");
+                                                                while($fetcharray = mysqli_fetch_array($ambilsemuasupplier)){
+                                                                    $namasuppliernya = $fetcharray['namasupplier'];
+                                                                    $idsuppliernya = $fetcharray['idsupplier'];
+                                                                ?>
+                                                            <option value="<?=$idsuppliernya;?>"><?=$namasuppliernya;?></option>
+                                                            <?php
+                                                                };
+                                                            ?>
+                                                            </select>
                                                             <br>
                                                             <input type="hidden" name="idb" value="<?=$idb;?>">
                                                             <input type="hidden" name="idm" value="<?=$idm;?>">
+                                                            <input type="hidden" name="ids" value="<?=$ids;?>">
                                                             <button type="submit" class="btn btn-primary" name="updatebarangmasuk">Submit</button>
                                                         </div>
                                                     </form>
@@ -283,6 +305,7 @@
                                                             Apakah Anda yakin ingin menghapus <?=$namabarang;?>?
                                                             <input type="hidden" name="idb" value="<?=$idb;?>">
                                                             <input type="hidden" name="kty" value="<?=$qty;?>">
+                                                            <input type="hidden" name="namasupplier" value="<?=$namasupplier;?>">
                                                             <input type="hidden" name="idm" value="<?=$idm;?>">
                                                             <br><br>
                                                             <button type="submit" class="btn btn-danger" name="hapusbarangmasuk">Hapus</button>
@@ -332,6 +355,19 @@
                                 <input type="number" name="qty" placeholder="Quantity" class="form-control" required>
                                 <br>
                                 <input type="text" name="penerima" placeholder="penerima" class="form-control" required> 
+                                <br>
+                                <select name="suppliernya" class="form-control">
+                                    <?php
+                                        $ambilsemuasupplier = mysqli_query($conn,"SELECT * FROM supplier");
+                                        while($fetcharray = mysqli_fetch_array($ambilsemuasupplier)){
+                                            $namasuppliernya = $fetcharray['namasupplier'];
+                                            $idsuppliernya = $fetcharray['idsupplier'];
+                                        ?>
+                                    <option value="<?=$idsuppliernya;?>"><?=$namasuppliernya;?></option>
+                                    <?php
+                                        };
+                                    ?>
+                                </select>
                             </div>
 
                         <!-- Modal footer -->
