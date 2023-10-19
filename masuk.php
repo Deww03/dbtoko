@@ -79,6 +79,13 @@
                     </div>
                 </li>
 
+                <!-- Nav Item - Supplier -->
+                <li class="nav-item">
+                    <a class="nav-link" href="supplier.php">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Supplier</span></a>
+                </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -205,6 +212,7 @@
                                         <th>Nama Barang</th>
                                         <th>Jumlah</th>
                                         <th>Penerima</th>
+                                        <th>Supplier</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -225,6 +233,7 @@
                                             <td><?=$namabarang;?></td>
                                             <td><?=$qty;?></td>
                                             <td><?=$penerima;?></td>
+                                            <td>test</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idm;?>">Edit</button>
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idm;?>">Delete</button>

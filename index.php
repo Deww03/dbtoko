@@ -73,6 +73,13 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Supplier -->
+            <li class="nav-item">
+                <a class="nav-link" href="supplier.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Supplier</span></a>
+            </li>
+
             <!-- Divider -->
                 <hr class="sidebar-divider">
 
